@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		53886B3F2BC5028400E64790 /* OneCoinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B3E2BC5028400E64790 /* OneCoinApp.swift */; };
-		53886B412BC5028400E64790 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B402BC5028400E64790 /* ContentView.swift */; };
 		53886B432BC5028600E64790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B422BC5028600E64790 /* Assets.xcassets */; };
 		53886B462BC5028600E64790 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B452BC5028600E64790 /* Preview Assets.xcassets */; };
 		53886B4F2BC5037F00E64790 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B4E2BC5037F00E64790 /* Market.swift */; };
@@ -16,12 +15,17 @@
 		53886B552BC5049B00E64790 /* UpbitAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B542BC5049B00E64790 /* UpbitAPIManager.swift */; };
 		53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B562BC5051000E64790 /* UpbitWebSocketManager.swift */; };
 		53886B592BC5052A00E64790 /* MarketTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B582BC5052A00E64790 /* MarketTicker.swift */; };
+		53886B5C2BC5057800E64790 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B5B2BC5057800E64790 /* MainTabView.swift */; };
+		53886B5F2BC5059700E64790 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B5E2BC5059700E64790 /* MarketView.swift */; };
+		53886B612BC505AB00E64790 /* MarketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B602BC505AB00E64790 /* MarketRow.swift */; };
+		53886B642BC505DC00E64790 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53886B632BC505DC00E64790 /* Kingfisher */; };
+		53886B662BC505F300E64790 /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B652BC505F300E64790 /* MarketViewModel.swift */; };
+		53886B692BC5063200E64790 /* MarketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B682BC5063200E64790 /* MarketDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53886B3B2BC5028400E64790 /* OneCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53886B3E2BC5028400E64790 /* OneCoinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCoinApp.swift; sourceTree = "<group>"; };
-		53886B402BC5028400E64790 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53886B422BC5028600E64790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53886B452BC5028600E64790 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		53886B4E2BC5037F00E64790 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
@@ -29,6 +33,11 @@
 		53886B542BC5049B00E64790 /* UpbitAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitAPIManager.swift; sourceTree = "<group>"; };
 		53886B562BC5051000E64790 /* UpbitWebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitWebSocketManager.swift; sourceTree = "<group>"; };
 		53886B582BC5052A00E64790 /* MarketTicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTicker.swift; sourceTree = "<group>"; };
+		53886B5B2BC5057800E64790 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		53886B5E2BC5059700E64790 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
+		53886B602BC505AB00E64790 /* MarketRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketRow.swift; sourceTree = "<group>"; };
+		53886B652BC505F300E64790 /* MarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewModel.swift; sourceTree = "<group>"; };
+		53886B682BC5063200E64790 /* MarketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53886B642BC505DC00E64790 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +71,9 @@
 		53886B3D2BC5028400E64790 /* OneCoin */ = {
 			isa = PBXGroup;
 			children = (
+				53886B5A2BC5056500E64790 /* Presenter */,
 				53886B4C2BC5035600E64790 /* Network */,
 				53886B3E2BC5028400E64790 /* OneCoinApp.swift */,
-				53886B402BC5028400E64790 /* ContentView.swift */,
 				53886B422BC5028600E64790 /* Assets.xcassets */,
 				53886B442BC5028600E64790 /* Preview Content */,
 			);
@@ -98,6 +108,34 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		53886B5A2BC5056500E64790 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				53886B5D2BC5058000E64790 /* Market */,
+				53886B5B2BC5057800E64790 /* MainTabView.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		53886B5D2BC5058000E64790 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				53886B672BC5062000E64790 /* Detail */,
+				53886B5E2BC5059700E64790 /* MarketView.swift */,
+				53886B602BC505AB00E64790 /* MarketRow.swift */,
+				53886B652BC505F300E64790 /* MarketViewModel.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		53886B672BC5062000E64790 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				53886B682BC5063200E64790 /* MarketDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,6 +152,9 @@
 			dependencies = (
 			);
 			name = OneCoin;
+			packageProductDependencies = (
+				53886B632BC505DC00E64790 /* Kingfisher */,
+			);
 			productName = OneCoin;
 			productReference = 53886B3B2BC5028400E64790 /* OneCoin.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +183,9 @@
 				Base,
 			);
 			mainGroup = 53886B322BC5028400E64790;
+			packageReferences = (
+				53886B622BC505DC00E64790 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 53886B3C2BC5028400E64790 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,12 +212,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53886B612BC505AB00E64790 /* MarketRow.swift in Sources */,
 				53886B592BC5052A00E64790 /* MarketTicker.swift in Sources */,
 				53886B552BC5049B00E64790 /* UpbitAPIManager.swift in Sources */,
-				53886B412BC5028400E64790 /* ContentView.swift in Sources */,
+				53886B5F2BC5059700E64790 /* MarketView.swift in Sources */,
+				53886B5C2BC5057800E64790 /* MainTabView.swift in Sources */,
 				53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */,
+				53886B692BC5063200E64790 /* MarketDetailView.swift in Sources */,
 				53886B532BC5047F00E64790 /* Ticker.swift in Sources */,
 				53886B3F2BC5028400E64790 /* OneCoinApp.swift in Sources */,
+				53886B662BC505F300E64790 /* MarketViewModel.swift in Sources */,
 				53886B4F2BC5037F00E64790 /* Market.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -290,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -314,8 +362,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,9 +372,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dahye.OneCoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,8 +396,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,9 +406,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dahye.OneCoin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -380,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53886B622BC505DC00E64790 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53886B632BC505DC00E64790 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53886B622BC505DC00E64790 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53886B332BC5028400E64790 /* Project object */;
 }
