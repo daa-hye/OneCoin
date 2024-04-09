@@ -11,6 +11,11 @@
 		53886B412BC5028400E64790 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B402BC5028400E64790 /* ContentView.swift */; };
 		53886B432BC5028600E64790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B422BC5028600E64790 /* Assets.xcassets */; };
 		53886B462BC5028600E64790 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B452BC5028600E64790 /* Preview Assets.xcassets */; };
+		53886B4F2BC5037F00E64790 /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B4E2BC5037F00E64790 /* Market.swift */; };
+		53886B532BC5047F00E64790 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B522BC5047F00E64790 /* Ticker.swift */; };
+		53886B552BC5049B00E64790 /* UpbitAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B542BC5049B00E64790 /* UpbitAPIManager.swift */; };
+		53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B562BC5051000E64790 /* UpbitWebSocketManager.swift */; };
+		53886B592BC5052A00E64790 /* MarketTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B582BC5052A00E64790 /* MarketTicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		53886B402BC5028400E64790 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53886B422BC5028600E64790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53886B452BC5028600E64790 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53886B4E2BC5037F00E64790 /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		53886B522BC5047F00E64790 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		53886B542BC5049B00E64790 /* UpbitAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitAPIManager.swift; sourceTree = "<group>"; };
+		53886B562BC5051000E64790 /* UpbitWebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitWebSocketManager.swift; sourceTree = "<group>"; };
+		53886B582BC5052A00E64790 /* MarketTicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 		53886B3D2BC5028400E64790 /* OneCoin */ = {
 			isa = PBXGroup;
 			children = (
+				53886B4C2BC5035600E64790 /* Network */,
 				53886B3E2BC5028400E64790 /* OneCoinApp.swift */,
 				53886B402BC5028400E64790 /* ContentView.swift */,
 				53886B422BC5028600E64790 /* Assets.xcassets */,
@@ -65,6 +76,26 @@
 				53886B452BC5028600E64790 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		53886B4C2BC5035600E64790 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				53886B4D2BC5036500E64790 /* Model */,
+				53886B542BC5049B00E64790 /* UpbitAPIManager.swift */,
+				53886B562BC5051000E64790 /* UpbitWebSocketManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		53886B4D2BC5036500E64790 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53886B4E2BC5037F00E64790 /* Market.swift */,
+				53886B522BC5047F00E64790 /* Ticker.swift */,
+				53886B582BC5052A00E64790 /* MarketTicker.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53886B592BC5052A00E64790 /* MarketTicker.swift in Sources */,
+				53886B552BC5049B00E64790 /* UpbitAPIManager.swift in Sources */,
 				53886B412BC5028400E64790 /* ContentView.swift in Sources */,
+				53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */,
+				53886B532BC5047F00E64790 /* Ticker.swift in Sources */,
 				53886B3F2BC5028400E64790 /* OneCoinApp.swift in Sources */,
+				53886B4F2BC5037F00E64790 /* Market.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
