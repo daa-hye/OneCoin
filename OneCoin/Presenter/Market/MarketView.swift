@@ -35,7 +35,7 @@ struct MarketView: View {
                         ZStack(alignment: .leading) {
                             MarketRow(market: market)
                             NavigationLink {
-                                MarketDetailView(market: Market(market: market.market, koreanName: market.koreanName, englishName: market.englishName))
+                                MarketDetailView(viewModel: MarketDetailViewModel(market: market))
                             } label: {
                                 EmptyView()
                             }

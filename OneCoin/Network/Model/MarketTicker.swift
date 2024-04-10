@@ -19,4 +19,5 @@ struct MarketTicker: Hashable, Identifiable {
     let changeRate: Double
     let accTradePrice: Double
     let image: URL
+    let code: String
 }

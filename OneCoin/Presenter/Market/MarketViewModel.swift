@@ -13,7 +13,6 @@ final class MarketViewModel: ObservableObject {
     @Published var markets: [Market] = []
     @Published var marketTickers: [MarketTicker] = []
 
-
     private var cancellabel = Set<AnyCancellable>()
 
     func fetchAllMarket() async {

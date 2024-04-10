@@ -33,6 +33,22 @@ final class UpbitAPIManager: NSObject {
         }
     }
 
+    func fetchMinuteCandle(_ market: String) async throws -> [Candle] {
+        guard let url = URL(string: "https://api.upbit.com/v1/candles/minutes/10?market=\(market)&count=60") else { throw APIError.invalidURL }
+
+        let (data, response) = try await URLSession.shared.data(for: URLRequest(url: url))
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw APIError.invalidResponse
+        }
+
+        guard let decodedData = try? JSONDecoder().decode([Candle].self, from: data) else {
+            throw APIError.decodeFail
+        }
+
+        return decodedData
+    }
+
 }
 
 extension UpbitAPIManager {
