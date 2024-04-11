@@ -33,7 +33,7 @@ struct MarketView: View {
             Section {
                 List(markets, id: \.id) { market in
                         ZStack(alignment: .leading) {
-                            MarketRow(market: market)
+                            MarketRow(market: market, like: MarketData.isLiked(market.market))
                             NavigationLink {
                                 MarketDetailView(viewModel: MarketDetailViewModel(market: market))
                             } label: {

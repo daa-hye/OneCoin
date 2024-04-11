@@ -26,6 +26,7 @@
 		53886B762BC5490000E64790 /* String + DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B752BC5490000E64790 /* String + DateFormatter.swift */; };
 		53886B782BC65B2900E64790 /* Double + PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B772BC65B2900E64790 /* Double + PriceFormatter.swift */; };
 		53886B7A2BC67ED300E64790 /* String + FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B792BC67ED300E64790 /* String + FontColor.swift */; };
+		53886B822BC7B89400E64790 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B812BC7B89400E64790 /* MarketData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		53886B752BC5490000E64790 /* String + DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + DateFormatter.swift"; sourceTree = "<group>"; };
 		53886B772BC65B2900E64790 /* Double + PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + PriceFormatter.swift"; sourceTree = "<group>"; };
 		53886B792BC67ED300E64790 /* String + FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + FontColor.swift"; sourceTree = "<group>"; };
+		53886B812BC7B89400E64790 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +83,12 @@
 		53886B3D2BC5028400E64790 /* OneCoin */ = {
 			isa = PBXGroup;
 			children = (
-				53886B742BC548CE00E64790 /* Utill */,
 				53886B5A2BC5056500E64790 /* Presenter */,
 				53886B4C2BC5035600E64790 /* Network */,
 				53886B3E2BC5028400E64790 /* OneCoinApp.swift */,
 				53886B422BC5028600E64790 /* Assets.xcassets */,
+				53886B802BC7B86B00E64790 /* Data */,
+				53886B742BC548CE00E64790 /* Utill */,
 				53886B442BC5028600E64790 /* Preview Content */,
 			);
 			path = OneCoin;
@@ -152,11 +155,27 @@
 		53886B742BC548CE00E64790 /* Utill */ = {
 			isa = PBXGroup;
 			children = (
+				53886B7B2BC7A8EA00E64790 /* Extension */,
+			);
+			path = Utill;
+			sourceTree = "<group>";
+		};
+		53886B7B2BC7A8EA00E64790 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
 				53886B752BC5490000E64790 /* String + DateFormatter.swift */,
 				53886B772BC65B2900E64790 /* Double + PriceFormatter.swift */,
 				53886B792BC67ED300E64790 /* String + FontColor.swift */,
 			);
-			path = Utill;
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		53886B802BC7B86B00E64790 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				53886B812BC7B89400E64790 /* MarketData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53886B822BC7B89400E64790 /* MarketData.swift in Sources */,
 				53886B612BC505AB00E64790 /* MarketRow.swift in Sources */,
 				53886B712BC5314D00E64790 /* MarketDetailViewModel.swift in Sources */,
 				53886B592BC5052A00E64790 /* MarketTicker.swift in Sources */,
