@@ -12,10 +12,9 @@ struct MarketDetailView: View {
 
     @StateObject var viewModel: MarketDetailViewModel
 
-
     var body: some View {
         let candles = viewModel.candles
-        let market = viewModel.market
+        let market = viewModel.marketTicker
 
         VStack(alignment: .leading) {
             HStack {
@@ -85,10 +84,9 @@ struct MarketDetailView: View {
             .chartYScale(domain: viewModel.minItem.lowPrice...viewModel.maxItem.highPrice)
             Spacer(minLength: 50.0)
         }
-        .navigationTitle(viewModel.market.koreanName)
         .task {
             await viewModel.fetchMinuteCandlde()
-            UpbitWebSocketManager.shared.closeWebSocket()
+            viewModel.fetchTicker()
         }
     }
 }

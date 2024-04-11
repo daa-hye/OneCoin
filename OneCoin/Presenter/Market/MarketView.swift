@@ -54,9 +54,6 @@ struct MarketView: View {
         .task {
             await viewModel.fetchAllMarket()
         }
-        .onDisappear {
-            viewModel.closeWebSocket()
-        }
     }
 }
 
