@@ -14,10 +14,11 @@ extension Double {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
             return numberFormatter.string(from: NSNumber(value: num)) ?? "\(num)"
-        } else if self < 0 {
+        } else if self < 1.0 {
             return formatComma()
         } else {
-            return String(format: "%.1d", formatComma())
+            let roundedValue = (self * 10.0).rounded() / 10.0
+            return roundedValue.formatComma()
         }
     }
 

@@ -14,8 +14,8 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             Text("1")
-            .tabItem { Image(systemName: "star") }
-            .tag("star")
+            .tabItem { Image(systemName: "heart.fill") }
+            .tag("like")
             MarketView()
                 .tabItem { Image(systemName: "chart.line.uptrend.xyaxis") }
                 .tag("market")

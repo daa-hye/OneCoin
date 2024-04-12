@@ -27,6 +27,7 @@
 		53886B782BC65B2900E64790 /* Double + PriceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B772BC65B2900E64790 /* Double + PriceFormatter.swift */; };
 		53886B7A2BC67ED300E64790 /* String + FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B792BC67ED300E64790 /* String + FontColor.swift */; };
 		53886B822BC7B89400E64790 /* MarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B812BC7B89400E64790 /* MarketData.swift */; };
+		53886B842BC8B9BA00E64790 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B832BC8B9BA00E64790 /* ChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		53886B772BC65B2900E64790 /* Double + PriceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + PriceFormatter.swift"; sourceTree = "<group>"; };
 		53886B792BC67ED300E64790 /* String + FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + FontColor.swift"; sourceTree = "<group>"; };
 		53886B812BC7B89400E64790 /* MarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketData.swift; sourceTree = "<group>"; };
+		53886B832BC8B9BA00E64790 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				53886B5E2BC5059700E64790 /* MarketView.swift */,
 				53886B602BC505AB00E64790 /* MarketRow.swift */,
 				53886B652BC505F300E64790 /* MarketViewModel.swift */,
+				53886B832BC8B9BA00E64790 /* ChartView.swift */,
 			);
 			path = Market;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				53886B712BC5314D00E64790 /* MarketDetailViewModel.swift in Sources */,
 				53886B592BC5052A00E64790 /* MarketTicker.swift in Sources */,
 				53886B552BC5049B00E64790 /* UpbitAPIManager.swift in Sources */,
+				53886B842BC8B9BA00E64790 /* ChartView.swift in Sources */,
 				53886B5F2BC5059700E64790 /* MarketView.swift in Sources */,
 				53886B5C2BC5057800E64790 /* MainTabView.swift in Sources */,
 				53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */,
