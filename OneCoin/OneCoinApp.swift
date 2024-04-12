@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct OneCoinApp: App {
+    @StateObject private var coreDataStack = CoreDataStack.shared
+
     var body: some Scene {
         WindowGroup {
             MainTabView()
+                .environment(\.managedObjectContext,
+                              coreDataStack.persistentContainer.viewContext)
         }
     }
 }

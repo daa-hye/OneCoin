@@ -10,10 +10,10 @@ import Charts
 
 struct ChartView: View {
 
-    @State var candles: [Candle]
-    @State var maxItem: Candle
-    @State var minItem: Candle
-    @State var startPrice: Double
+    let candles: [Candle]
+    let maxItem: Candle
+    let minItem: Candle
+    let startPrice: Double
 
     var body: some View {
         Chart {
@@ -50,7 +50,6 @@ struct ChartView: View {
             .lineStyle(StrokeStyle(lineWidth: 1.0, lineCap: .butt, dash: [5,5], dashPhase: 0))
             .foregroundStyle(.gray)
         }
-        .padding(20)
         .chartXAxis(.hidden)
         .chartYAxis(.hidden)
         .chartYScale(domain: minItem.lowPrice...maxItem.highPrice)

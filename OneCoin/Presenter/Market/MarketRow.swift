@@ -10,7 +10,9 @@ import Kingfisher
 
 struct MarketRow: View {
     @State var market: MarketTicker
-    @State var like: Bool
+    @State var like: Coin?
+
+    @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
         HStack {
@@ -42,10 +44,18 @@ struct MarketRow: View {
             Image(systemName: "heart.fill")
                 .resizable()
                 .frame(width: 23, height: 23)
-                .foregroundStyle(like ? Color.pink : Color("Unlike"))
+                .foregroundStyle(like != nil ? Color.pink : Color("Unlike"))
                 .onTapGesture {
-                    MarketData.toggle(market.market)
-                    like.toggle()
+                    if let liked = like {
+                        viewContext.delete(liked)
+                        like = nil
+                    } else {
+                        let newCoin = Coin(context: viewContext)
+                        newCoin.name = market.koreanName
+                        newCoin.code = market.market
+                        like = newCoin
+                    }
+                    try? viewContext.save()
                 }
         }
         .padding(5)

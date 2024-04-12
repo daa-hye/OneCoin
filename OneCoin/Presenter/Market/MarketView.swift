@@ -12,6 +12,9 @@ struct MarketView: View {
 
     @State private var searchQueryString = ""
 
+    @FetchRequest(entity: Coin.entity(), sortDescriptors: [])
+    private var likedCoins: FetchedResults<Coin>
+
     var body: some View {
         let markets: [MarketTicker] = {
             if searchQueryString.isEmpty {
@@ -33,7 +36,10 @@ struct MarketView: View {
             Section {
                 List(markets, id: \.id) { market in
                         ZStack(alignment: .leading) {
-                            MarketRow(market: market, like: MarketData.isLiked(market.market))
+                            MarketRow(
+                                market: market,
+                                like: likedCoins.first(where: {$0.code == market.market}).self
+                            )
                             NavigationLink {
                                 MarketDetailView(viewModel: MarketDetailViewModel(market: market))
                             } label: {

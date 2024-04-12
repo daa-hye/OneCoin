@@ -30,7 +30,6 @@ final class MarketDetailViewModel: ObservableObject {
                 candles = candleList
                 minItem = candles.min(by: {$0.lowPrice < $1.lowPrice})!
                 maxItem = candles.max(by: {$0.highPrice < $1.highPrice})!
-                print(minItem, maxItem)
                 startPrice = candles[0].openingPrice
             }
         } catch {
