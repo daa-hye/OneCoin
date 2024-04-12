@@ -13,7 +13,7 @@ struct MainTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text("1")
+            LikeView()
             .tabItem { Image(systemName: "heart.fill") }
             .tag("like")
             MarketView()

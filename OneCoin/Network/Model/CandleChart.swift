@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct CandleChart: Hashable {
+    let name: String
+    let candles: [Candle]
+    let minPrice: Double
+    let maxPrice: Double
+}

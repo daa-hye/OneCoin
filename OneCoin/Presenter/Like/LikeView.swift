@@ -16,11 +16,14 @@ struct LikeView: View {
     var body: some View {
         let list = viewModel.list
 
-        VStack {
-            ForEach(list, id: \.self) {
-                LikedMarketView(candleChart: $0)
+        ScrollView {
+            LazyVStack(spacing: 10) {
+                ForEach(list, id: \.self) {
+                    LikedMarketView(candleChart: $0)
+                }
             }
         }
+        .padding(10)
         .task {
             for coin in likedCoins {
                 await viewModel.fetchMinuteCandle(coin)

@@ -20,7 +20,9 @@ final class LikeViewModel: ObservableObject {
                 minPrice: candleList.min(by: {$0.lowPrice < $1.lowPrice})!.lowPrice,
                 maxPrice: candleList.max(by: {$0.highPrice < $1.highPrice})!.highPrice
             )
-            list.append(chart)
+            await MainActor.run {
+                list.append(chart)
+            }
         } catch {
             print("캔들 가져오기 에러")
         }

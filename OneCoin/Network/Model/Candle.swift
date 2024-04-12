@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Candle: Codable {
+struct Candle: Codable, Hashable {
     let market: String
     let candleDatetime: String
     let openingPrice: Double
