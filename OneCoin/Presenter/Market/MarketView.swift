@@ -51,8 +51,7 @@ struct MarketView: View {
             } header: {
 
             }
-            .navigationTitle("거래소")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("코인정보")
         }
         .listStyle(.plain)
         .environment(\.defaultMinListRowHeight, 50)

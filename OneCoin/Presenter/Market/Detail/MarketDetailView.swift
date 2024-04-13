@@ -47,6 +47,7 @@ struct MarketDetailView: View {
                 .padding(20)
             Spacer(minLength: 50.0)
         }
+        .navigationBarTitleDisplayMode(.inline)
         .task {
             await viewModel.fetchMinuteCandlde()
             viewModel.fetchTicker()

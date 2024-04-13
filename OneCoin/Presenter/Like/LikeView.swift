@@ -15,19 +15,22 @@ struct LikeView: View {
 
     var body: some View {
         let list = viewModel.list
-
-        ScrollView {
-            LazyVStack(spacing: 10) {
-                ForEach(list, id: \.self) {
-                    LikedMarketView(candleChart: $0)
+        NavigationStack {
+            ScrollView {
+                Spacer()
+                LazyVStack(spacing: 20) {
+                    ForEach(list, id: \.self) {
+                        LikedMarketView(candleChart: $0)
+                    }
                 }
             }
-        }
-        .padding(10)
-        .task {
-            for coin in likedCoins {
-                await viewModel.fetchMinuteCandle(coin)
+            .scrollIndicators(.hidden)
+            .task {
+                for coin in likedCoins {
+                    await viewModel.fetchMinuteCandle(coin)
+                }
             }
+            .navigationTitle("관심코인")
         }
     }
 }

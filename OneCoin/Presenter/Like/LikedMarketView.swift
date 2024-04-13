@@ -14,18 +14,15 @@ struct LikedMarketView: View {
 
     var body: some View {
         ZStack {
-            Rectangle()
+            RoundedRectangle(cornerRadius: 15, style: .circular)
                 .fill(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 15), style: FillStyle())
-                .shadow(color: Color.black.opacity(0.3), radius: 2, x: 5, y: 5)
+                .shadow(color: Color.black.opacity(0.3), radius: 5, x: 1, y: 1)
                 .frame(height: 150)
-                .padding()
             VStack(alignment: .leading) {
-                Spacer()
                 Text(candleChart.name)
-                    .padding()
-                    .font(.title2)
+                    .font(.body)
                     .bold()
+                    .padding(5)
                 Chart {
                     ForEach(candleChart.candles, id: \.market) {
                         LineMark(
@@ -35,12 +32,12 @@ struct LikedMarketView: View {
                         .lineStyle(StrokeStyle(lineWidth: 2.0, lineCap: .round))
                     }
                 }
-                .padding()
                 .chartXAxis(.hidden)
                 .chartYAxis(.hidden)
                 .chartYScale(domain: candleChart.minPrice...candleChart.maxPrice)
             }
-            .padding(10)
+            .padding(5)
         }
+        .padding(.horizontal, 15)
     }
 }

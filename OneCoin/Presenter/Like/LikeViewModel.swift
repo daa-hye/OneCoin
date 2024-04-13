@@ -21,7 +21,11 @@ final class LikeViewModel: ObservableObject {
                 maxPrice: candleList.max(by: {$0.highPrice < $1.highPrice})!.highPrice
             )
             await MainActor.run {
-                list.append(chart)
+                if let index = list.firstIndex(where: { $0.name == coin.name }) {
+                    list[index] = chart
+                } else {
+                    list.append(chart)
+                }
             }
         } catch {
             print("캔들 가져오기 에러")

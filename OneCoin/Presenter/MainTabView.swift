@@ -14,10 +14,16 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             LikeView()
-            .tabItem { Image(systemName: "heart.fill") }
+                .tabItem {
+                    Image(systemName: "heart.fill")
+                    Text("관심코인")
+                }
             .tag("like")
             MarketView()
-                .tabItem { Image(systemName: "chart.line.uptrend.xyaxis") }
+                .tabItem { 
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                    Text("코인정보")
+                }
                 .tag("market")
             Text("3")
                 .tabItem { Image(systemName: "ellipsis") }
