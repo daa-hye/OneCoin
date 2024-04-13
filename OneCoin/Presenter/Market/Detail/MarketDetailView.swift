@@ -10,6 +10,7 @@ import SwiftUI
 struct MarketDetailView: View {
 
     @StateObject var viewModel: MarketDetailViewModel
+    @State var selectedTab: Tab = .chart
 
     var body: some View {
         let candles = viewModel.candles
@@ -43,14 +44,51 @@ struct MarketDetailView: View {
                 }
             }
             .padding()
-            ChartView(candles: candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice)
-                .padding(20)
-            Spacer(minLength: 50.0)
+            HStack {
+                Button("차트") {
+                    selectedTab = .chart
+                }
+                .foregroundStyle(selectedTab == .chart ? .red : .gray)
+                .buttonStyle(.bordered)
+                .tint(selectedTab == .chart ? .gray : .white)
+                Button("호가") {
+                    selectedTab = .orderbook
+                }
+                .foregroundStyle(selectedTab == .orderbook ? .red : .gray)
+                .buttonStyle(.bordered)
+                .tint(selectedTab == .orderbook ? .gray : .white)
+            }
+            .padding(.leading, 10)
+            Divider()
+                .padding(.bottom, 30)
+
+            switch selectedTab {
+            case .chart:
+                ChartView(candles: candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice)
+                    .padding(20)
+                    .task {
+                        await viewModel.fetchMinuteCandlde()
+                    }
+                Spacer(minLength: 50.0)
+            case .orderbook:
+                OrderbookView(
+                    orderbook: $viewModel.orderbook,
+                    largestAskSize: viewModel.largestAskSize(),
+                    largestBidSize: viewModel.largestBidSize()
+                )
+                .task {
+                    viewModel.fetchOrderbook()
+                }
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            await viewModel.fetchMinuteCandlde()
             viewModel.fetchTicker()
         }
     }
+}
+
+enum Tab {
+    case chart
+    case orderbook
 }

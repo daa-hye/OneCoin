@@ -35,7 +35,7 @@ final class MarketViewModel: ObservableObject {
             try UpbitWebSocketManager.shared.openWebSocket { [weak self] in
                 guard let self else { return }
 
-                UpbitWebSocketManager.shared.receive()
+                UpbitWebSocketManager.shared.receive(item: .ticker)
 
                 self.markets.publisher
                     .flatMap { market -> AnyPublisher<MarketTicker, Never> in
@@ -54,7 +54,7 @@ final class MarketViewModel: ObservableObject {
                     .store(in: &cancellabel)
 
 
-                UpbitWebSocketManager.shared.send(type: "ticker", list: self.markets)
+                UpbitWebSocketManager.shared.send(type: "ticker", list: self.markets.map({$0.market}))
             }
         } catch {
             print("소켓 연결 에러")

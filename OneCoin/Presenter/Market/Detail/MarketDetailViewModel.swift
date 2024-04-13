@@ -12,6 +12,7 @@ final class MarketDetailViewModel: ObservableObject {
     
     @Published var marketTicker: MarketTicker
     @Published var candles: [Candle] = []
+    @Published var orderbook: OrderBookChart = OrderBookChart(code: "", timestamp: 0, totalAskSize: 0.0, totalBidSize: 0.0, askOrderBook: [], bidOrderBook: [])
 
     private var cancellabel = Set<AnyCancellable>()
 
@@ -21,6 +22,29 @@ final class MarketDetailViewModel: ObservableObject {
 
     init(market: MarketTicker) {
         self.marketTicker = market
+    }
+
+    func fetchTicker() {
+        do {
+            try UpbitWebSocketManager.shared.openWebSocket { [weak self] in
+                guard let self else { return }
+                let market = Market(market: marketTicker.market, koreanName: marketTicker.koreanName, englishName: marketTicker.englishName)
+
+                UpbitWebSocketManager.shared.receive(item: .ticker)
+
+                UpbitWebSocketManager.shared.connectTicker(market: market)
+                    .receive(on: DispatchQueue.main)
+                    .sink { [weak self] ticker in
+                        guard let self else { return }
+                        self.marketTicker = ticker
+                    }
+                    .store(in: &cancellabel)
+                
+                UpbitWebSocketManager.shared.send(type: "ticker", list: [market.market])
+            }
+        } catch {
+            print("소켓 연결 에러")
+        }
     }
 
     func fetchMinuteCandlde() async {
@@ -37,27 +61,34 @@ final class MarketDetailViewModel: ObservableObject {
         }
     }
 
-    func fetchTicker() {
+    func fetchOrderbook() {
         do {
             try UpbitWebSocketManager.shared.openWebSocket { [weak self] in
                 guard let self else { return }
-                let market = Market(market: marketTicker.market, koreanName: marketTicker.koreanName, englishName: marketTicker.englishName)
 
-                UpbitWebSocketManager.shared.receive()
+                UpbitWebSocketManager.shared.receive(item: .orderbook)
 
-                UpbitWebSocketManager.shared.connectTicker(market: market)
+                UpbitWebSocketManager.shared.connectOrderbook()
                     .receive(on: DispatchQueue.main)
-                    .sink { [weak self] ticker in
+                    .sink { [weak self] orderbook in
                         guard let self else { return }
-                        self.marketTicker = ticker
+                        self.orderbook = orderbook
                     }
                     .store(in: &cancellabel)
 
-                UpbitWebSocketManager.shared.send(type: "ticker", list: [market])
+                UpbitWebSocketManager.shared.send(type: "orderbook", list: [marketTicker.market])
             }
         } catch {
-            print("소켓 연결 에러")
+
         }
+    }
+
+    func largestAskSize() -> Double {
+        return orderbook.askOrderBook.sorted(by: {$0.size > $1.size}).first?.size ?? 0.0
+    }
+
+    func largestBidSize() -> Double {
+        return orderbook.bidOrderBook.sorted(by: {$0.size > $1.size}).first?.size ?? 0.0
     }
 
 }

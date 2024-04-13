@@ -24,3 +24,10 @@ struct Candle: Codable, Hashable {
         case tradePrice = "trade_price"
     }
 }
+
+struct CandleChart: Hashable {
+    let name: String
+    let candles: [Candle]
+    let minPrice: Double
+    let maxPrice: Double
+}

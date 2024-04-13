@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53612AAB2BCD0F0000299209 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53612AAA2BCD0F0000299209 /* Kingfisher */; };
 		53886B3F2BC5028400E64790 /* OneCoinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B3E2BC5028400E64790 /* OneCoinApp.swift */; };
 		53886B432BC5028600E64790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B422BC5028600E64790 /* Assets.xcassets */; };
 		53886B462BC5028600E64790 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B452BC5028600E64790 /* Preview Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		53886B5C2BC5057800E64790 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B5B2BC5057800E64790 /* MainTabView.swift */; };
 		53886B5F2BC5059700E64790 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B5E2BC5059700E64790 /* MarketView.swift */; };
 		53886B612BC505AB00E64790 /* MarketRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B602BC505AB00E64790 /* MarketRow.swift */; };
-		53886B642BC505DC00E64790 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53886B632BC505DC00E64790 /* Kingfisher */; };
 		53886B662BC505F300E64790 /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B652BC505F300E64790 /* MarketViewModel.swift */; };
 		53886B692BC5063200E64790 /* MarketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B682BC5063200E64790 /* MarketDetailView.swift */; };
 		53886B712BC5314D00E64790 /* MarketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B702BC5314D00E64790 /* MarketDetailViewModel.swift */; };
@@ -30,9 +30,10 @@
 		53886B872BC8E5E900E64790 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B862BC8E5E900E64790 /* LikeView.swift */; };
 		53886B892BC8EB2700E64790 /* LikedMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B882BC8EB2700E64790 /* LikedMarketView.swift */; };
 		53886B8B2BC8F64100E64790 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B8A2BC8F64100E64790 /* LikeViewModel.swift */; };
-		53886B8D2BC8FABC00E64790 /* CandleChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B8C2BC8FABC00E64790 /* CandleChart.swift */; };
 		53886B962BC9019C00E64790 /* LikedCoinModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53886B942BC9019C00E64790 /* LikedCoinModel.xcdatamodeld */; };
 		53886B9C2BC905A300E64790 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B9B2BC905A300E64790 /* CoreDataStack.swift */; };
+		53F5D2BE2BCBDCAC002102D2 /* OrderbookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F5D2BD2BCBDCAC002102D2 /* OrderbookView.swift */; };
+		53F5D2C02BCCF81F002102D2 /* Orderbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F5D2BF2BCCF81F002102D2 /* Orderbook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,9 +60,10 @@
 		53886B862BC8E5E900E64790 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		53886B882BC8EB2700E64790 /* LikedMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedMarketView.swift; sourceTree = "<group>"; };
 		53886B8A2BC8F64100E64790 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
-		53886B8C2BC8FABC00E64790 /* CandleChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandleChart.swift; sourceTree = "<group>"; };
 		53886B952BC9019C00E64790 /* LikedCoinModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LikedCoinModel.xcdatamodel; sourceTree = "<group>"; };
 		53886B9B2BC905A300E64790 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		53F5D2BD2BCBDCAC002102D2 /* OrderbookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderbookView.swift; sourceTree = "<group>"; };
+		53F5D2BF2BCCF81F002102D2 /* Orderbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orderbook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53886B642BC505DC00E64790 /* Kingfisher in Frameworks */,
+				53612AAB2BCD0F0000299209 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +134,7 @@
 				53886B522BC5047F00E64790 /* Ticker.swift */,
 				53886B582BC5052A00E64790 /* MarketTicker.swift */,
 				53886B722BC536E900E64790 /* Candle.swift */,
-				53886B8C2BC8FABC00E64790 /* CandleChart.swift */,
+				53F5D2BF2BCCF81F002102D2 /* Orderbook.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +166,7 @@
 				53886B682BC5063200E64790 /* MarketDetailView.swift */,
 				53886B702BC5314D00E64790 /* MarketDetailViewModel.swift */,
 				53886B832BC8B9BA00E64790 /* ChartView.swift */,
+				53F5D2BD2BCBDCAC002102D2 /* OrderbookView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -221,7 +224,7 @@
 			);
 			name = OneCoin;
 			packageProductDependencies = (
-				53886B632BC505DC00E64790 /* Kingfisher */,
+				53612AAA2BCD0F0000299209 /* Kingfisher */,
 			);
 			productName = OneCoin;
 			productReference = 53886B3B2BC5028400E64790 /* OneCoin.app */;
@@ -252,7 +255,7 @@
 			);
 			mainGroup = 53886B322BC5028400E64790;
 			packageReferences = (
-				53886B622BC505DC00E64790 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				53612AA92BCD0F0000299209 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 53886B3C2BC5028400E64790 /* Products */;
 			projectDirPath = "";
@@ -288,10 +291,12 @@
 				53886B842BC8B9BA00E64790 /* ChartView.swift in Sources */,
 				53886B5F2BC5059700E64790 /* MarketView.swift in Sources */,
 				53886B892BC8EB2700E64790 /* LikedMarketView.swift in Sources */,
+				53F5D2BE2BCBDCAC002102D2 /* OrderbookView.swift in Sources */,
 				53886B5C2BC5057800E64790 /* MainTabView.swift in Sources */,
 				53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */,
 				53886B762BC5490000E64790 /* String + DateFormatter.swift in Sources */,
 				53886B732BC536E900E64790 /* Candle.swift in Sources */,
+				53F5D2C02BCCF81F002102D2 /* Orderbook.swift in Sources */,
 				53886B692BC5063200E64790 /* MarketDetailView.swift in Sources */,
 				53886B8B2BC8F64100E64790 /* LikeViewModel.swift in Sources */,
 				53886B9C2BC905A300E64790 /* CoreDataStack.swift in Sources */,
@@ -302,7 +307,6 @@
 				53886B782BC65B2900E64790 /* Double + PriceFormatter.swift in Sources */,
 				53886B662BC505F300E64790 /* MarketViewModel.swift in Sources */,
 				53886B4F2BC5037F00E64790 /* Market.swift in Sources */,
-				53886B8D2BC8FABC00E64790 /* CandleChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +524,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		53886B622BC505DC00E64790 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		53612AA92BCD0F0000299209 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -531,9 +535,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		53886B632BC505DC00E64790 /* Kingfisher */ = {
+		53612AAA2BCD0F0000299209 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53886B622BC505DC00E64790 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 53612AA92BCD0F0000299209 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
