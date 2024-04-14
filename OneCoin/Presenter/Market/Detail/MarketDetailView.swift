@@ -64,7 +64,7 @@ struct MarketDetailView: View {
 
             switch selectedTab {
             case .chart:
-                ChartView(candles: candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice)
+                ChartView(candles: candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice, change: market.change)
                     .padding(20)
                     .task {
                         await viewModel.fetchMinuteCandlde()

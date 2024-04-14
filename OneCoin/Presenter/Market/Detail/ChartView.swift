@@ -14,6 +14,7 @@ struct ChartView: View {
     let maxItem: Candle
     let minItem: Candle
     let startPrice: Double
+    let change: String
 
     var body: some View {
         Chart {
@@ -31,7 +32,7 @@ struct ChartView: View {
             .annotation(position: .top, alignment: .leading) {
                 Text("최고 "+maxItem.highPrice.formatPrice()+"원")
                     .font(.caption)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(change.setColor())
             }
             .opacity(0.5)
             PointMark(
@@ -41,7 +42,7 @@ struct ChartView: View {
             .annotation(position: .bottom, alignment: .leading) {
                 Text("최저 "+minItem.lowPrice.formatPrice()+"원")
                     .font(.caption)
-                    .foregroundStyle(.red)
+                    .foregroundStyle(change.setColor())
             }
             .opacity(0.5)
             RuleMark(
@@ -50,6 +51,7 @@ struct ChartView: View {
             .lineStyle(StrokeStyle(lineWidth: 1.0, lineCap: .butt, dash: [5,5], dashPhase: 0))
             .foregroundStyle(.gray)
         }
+        .foregroundStyle(change.setColor())
         .chartXAxis(.hidden)
         .chartYAxis(.hidden)
         .chartYScale(domain: minItem.lowPrice...maxItem.highPrice)
