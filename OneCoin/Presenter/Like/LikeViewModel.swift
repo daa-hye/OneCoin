@@ -15,7 +15,9 @@ final class LikeViewModel: ObservableObject {
         do {
             let candleList = try await UpbitAPIManager.shared.fetchMinuteCandle(coin.code!)
             let chart = CandleChart(
+                market: coin.code!,
                 name: coin.name!,
+                englishName: coin.englishName!,
                 candles: candleList,
                 minPrice: candleList.min(by: {$0.lowPrice < $1.lowPrice})!.lowPrice,
                 maxPrice: candleList.max(by: {$0.highPrice < $1.highPrice})!.highPrice

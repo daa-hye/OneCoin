@@ -53,6 +53,7 @@ struct MarketRow: View {
                         let newCoin = Coin(context: viewContext)
                         newCoin.name = market.koreanName
                         newCoin.code = market.market
+                        newCoin.englishName = market.englishName
                         like = newCoin
                     }
                     try? viewContext.save()

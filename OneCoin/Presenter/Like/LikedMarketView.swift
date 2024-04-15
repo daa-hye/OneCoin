@@ -20,6 +20,7 @@ struct LikedMarketView: View {
                 .frame(height: 150)
             VStack(alignment: .leading) {
                 Text(candleChart.name)
+                    .foregroundStyle(.black)
                     .font(.body)
                     .bold()
                     .padding(5)

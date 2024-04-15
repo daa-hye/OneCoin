@@ -26,7 +26,9 @@ struct Candle: Codable, Hashable {
 }
 
 struct CandleChart: Hashable {
+    let market: String
     let name: String
+    let englishName: String
     let candles: [Candle]
     let minPrice: Double
     let maxPrice: Double

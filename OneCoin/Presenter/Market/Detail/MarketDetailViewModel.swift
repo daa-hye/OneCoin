@@ -10,7 +10,9 @@ import Combine
 
 final class MarketDetailViewModel: ObservableObject {
     
-    @Published var marketTicker: MarketTicker
+    let market: Market
+
+    @Published var marketTicker = MarketTicker(market: "", koreanName: "", englishName: "", tradePrice: 0, change: "", changePrice: 0, changeRate: 0, accTradePrice: 0, image: nil, code: "")
     @Published var candles: [Candle] = []
     @Published var orderbook: OrderBookChart = OrderBookChart(code: "", timestamp: 0, totalAskSize: 0.0, totalBidSize: 0.0, askOrderBook: [], bidOrderBook: [])
     
@@ -21,16 +23,15 @@ final class MarketDetailViewModel: ObservableObject {
     var startPrice = 0.0
     var count = 0
     
-    init(market: MarketTicker) {
-        self.marketTicker = market
+    init(market: Market) {
+        self.market = market
     }
     
     func fetchTicker() {
         do {
             try UpbitWebSocketManager.shared.openWebSocket { [weak self] in
                 guard let self else { return }
-                let market = Market(market: marketTicker.market, koreanName: marketTicker.koreanName, englishName: marketTicker.englishName)
-                
+
                 UpbitWebSocketManager.shared.receive(item: .ticker)
                 
                 UpbitWebSocketManager.shared.connectTicker(market: market)
@@ -50,7 +51,7 @@ final class MarketDetailViewModel: ObservableObject {
     
     func fetchMinuteCandlde() async {
         do {
-            let candleList = try await UpbitAPIManager.shared.fetchMinuteCandle(marketTicker.market)
+            let candleList = try await UpbitAPIManager.shared.fetchMinuteCandle(market.market)
             await MainActor.run {
                 candles = candleList.filter{$0.candleDatetime.isToday()}
                 count = candles.count
@@ -92,7 +93,7 @@ final class MarketDetailViewModel: ObservableObject {
                     }
                     .store(in: &cancellable)
                 
-                UpbitWebSocketManager.shared.send(type: "orderbook", list: [marketTicker.market])
+                UpbitWebSocketManager.shared.send(type: "orderbook", list: [market.market])
             }
         } catch {
             

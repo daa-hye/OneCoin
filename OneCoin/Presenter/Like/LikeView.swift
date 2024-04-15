@@ -19,8 +19,12 @@ struct LikeView: View {
             ScrollView {
                 Spacer()
                 LazyVStack(spacing: 20) {
-                    ForEach(list, id: \.self) {
-                        LikedMarketView(candleChart: $0)
+                    ForEach(list, id: \.self) { item in
+                        NavigationLink {
+                            MarketDetailView(viewModel: MarketDetailViewModel(market: Market(market: item.market, koreanName: item.name, englishName: item.englishName)))
+                        } label: {
+                            LikedMarketView(candleChart: item)
+                        }
                     }
                 }
             }

@@ -41,7 +41,7 @@ struct MarketView: View {
                                 like: likedCoins.first(where: {$0.code == market.market}).self
                             )
                             NavigationLink {
-                                MarketDetailView(viewModel: MarketDetailViewModel(market: market))
+                                MarketDetailView(viewModel: MarketDetailViewModel(market: Market(market: market.market, koreanName: market.koreanName, englishName: market.englishName)))
                             } label: {
                                 EmptyView()
                             }

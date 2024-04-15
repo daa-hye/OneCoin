@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="Coin" representedClassName=".Coin" syncable="YES" codeGenerationType="class">
         <attribute name="code" attributeType="String"/>
+        <attribute name="englishName" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
     </entity>
 </model>
