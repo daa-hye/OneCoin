@@ -10,7 +10,7 @@ import Charts
 
 struct ChartView: View {
 
-    let candles: [Candle]
+    @Binding var candles: [Candle]
     let maxItem: Candle
     let minItem: Candle
     let startPrice: Double
@@ -18,7 +18,7 @@ struct ChartView: View {
 
     var body: some View {
         Chart {
-            ForEach(candles, id: \.market) {
+            ForEach(candles.sorted(by: { $0.candleDatetime.toDate() < $1.candleDatetime.toDate()}), id: \.market) {
                 LineMark(
                     x: .value("시간", $0.candleDatetime.toDate(), unit: .minute),
                     y: .value("가격", $0.tradePrice)
@@ -53,6 +53,7 @@ struct ChartView: View {
         }
         .foregroundStyle(change.setColor())
         .chartXAxis(.hidden)
+        .chartXScale(domain: Calendar.current.startOfDay(for: Date())...Calendar.current.date(byAdding: .hour, value: 24, to: Calendar.current.startOfDay(for: Date()))!)
         .chartYAxis(.hidden)
         .chartYScale(domain: minItem.lowPrice...maxItem.highPrice)
     }

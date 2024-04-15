@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53612AAB2BCD0F0000299209 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53612AAA2BCD0F0000299209 /* Kingfisher */; };
+		53612AAF2BD0FA0700299209 /* Date + TimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53612AAE2BD0FA0700299209 /* Date + TimeZone.swift */; };
 		53886B3F2BC5028400E64790 /* OneCoinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53886B3E2BC5028400E64790 /* OneCoinApp.swift */; };
 		53886B432BC5028600E64790 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B422BC5028600E64790 /* Assets.xcassets */; };
 		53886B462BC5028600E64790 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53886B452BC5028600E64790 /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53612AAE2BD0FA0700299209 /* Date + TimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + TimeZone.swift"; sourceTree = "<group>"; };
 		53886B3B2BC5028400E64790 /* OneCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53886B3E2BC5028400E64790 /* OneCoinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCoinApp.swift; sourceTree = "<group>"; };
 		53886B422BC5028600E64790 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				53886B752BC5490000E64790 /* String + DateFormatter.swift */,
 				53886B772BC65B2900E64790 /* Double + PriceFormatter.swift */,
 				53886B792BC67ED300E64790 /* String + FontColor.swift */,
+				53612AAE2BD0FA0700299209 /* Date + TimeZone.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				53886B5F2BC5059700E64790 /* MarketView.swift in Sources */,
 				53886B892BC8EB2700E64790 /* LikedMarketView.swift in Sources */,
 				53F5D2BE2BCBDCAC002102D2 /* OrderbookView.swift in Sources */,
+				53612AAF2BD0FA0700299209 /* Date + TimeZone.swift in Sources */,
 				53886B5C2BC5057800E64790 /* MainTabView.swift in Sources */,
 				53886B572BC5051000E64790 /* UpbitWebSocketManager.swift in Sources */,
 				53886B762BC5490000E64790 /* String + DateFormatter.swift in Sources */,

@@ -13,7 +13,6 @@ struct MarketDetailView: View {
     @State var selectedTab: Tab = .chart
 
     var body: some View {
-        let candles = viewModel.candles
         let market = viewModel.marketTicker
 
         VStack(alignment: .leading) {
@@ -64,7 +63,7 @@ struct MarketDetailView: View {
 
             switch selectedTab {
             case .chart:
-                ChartView(candles: candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice, change: market.change)
+                ChartView(candles: $viewModel.candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice, change: market.change)
                     .padding(20)
                     .task {
                         await viewModel.fetchMinuteCandlde()

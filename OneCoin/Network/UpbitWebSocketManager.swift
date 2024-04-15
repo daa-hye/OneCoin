@@ -80,14 +80,12 @@ final class UpbitWebSocketManager: NSObject {
                         switch item {
                         case .ticker:
                             if let decodedData = try? JSONDecoder().decode(Ticker.self, from: data) {
-                                print("receive \(decodedData)")
                                 if let subject = self?.tickerSubjects[decodedData.code] {
                                     subject.send(decodedData)
                                 }
                             }
                         case .orderbook:
                             if let decodedData = try? JSONDecoder().decode(Orderbook.self, from: data) {
-                                print("receive \(decodedData)")
                                 self?.orderbookSubject.send(decodedData)
                             }
                         }

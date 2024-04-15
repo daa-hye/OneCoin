@@ -17,7 +17,7 @@ struct Candle: Codable, Hashable {
 
     enum CodingKeys: String, CodingKey {
         case market
-        case candleDatetime = "candle_date_time_utc"
+        case candleDatetime = "candle_date_time_kst"
         case openingPrice = "opening_price"
         case highPrice = "high_price"
         case lowPrice = "low_price"

@@ -44,7 +44,7 @@ struct MarketRow: View {
             Image(systemName: "heart.fill")
                 .resizable()
                 .frame(width: 23, height: 23)
-                .foregroundStyle(like != nil ? Color.pink : Color("Unlike"))
+                .foregroundStyle(like != nil ? Color("Like") : Color("Unlike"))
                 .onTapGesture {
                     if let liked = like {
                         viewContext.delete(liked)

@@ -34,7 +34,7 @@ final class UpbitAPIManager: NSObject {
     }
 
     func fetchMinuteCandle(_ market: String) async throws -> [Candle] {
-        guard let url = URL(string: "https://api.upbit.com/v1/candles/minutes/10?market=\(market)&count=60") else { throw APIError.invalidURL }
+        guard let url = URL(string: "https://api.upbit.com/v1/candles/minutes/10?market=\(market)&count=\(unitCountAtCurrentTime())") else { throw APIError.invalidURL }
 
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: url))
 
@@ -57,6 +57,21 @@ extension UpbitAPIManager {
         case invalidURL
         case invalidResponse
         case decodeFail
+    }
+
+    func unitCountAtCurrentTime() -> Int {
+        var calendar = Calendar(identifier: .gregorian)
+        let timeZone = TimeZone(identifier: "Asia/Seoul")!
+        calendar.timeZone = timeZone
+
+        let now = Date()
+        let startOfDay = calendar.startOfDay(for: now)
+        let elapsedSeconds = now.timeIntervalSince(startOfDay)
+        let elapsedMinutes = Int(elapsedSeconds / 60)
+
+        let unitCount = elapsedMinutes / 10
+
+        return unitCount
     }
 
 }
