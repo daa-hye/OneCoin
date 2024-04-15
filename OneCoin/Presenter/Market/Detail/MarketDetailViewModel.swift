@@ -68,7 +68,6 @@ final class MarketDetailViewModel: ObservableObject {
                             } else {
                                 candles[count] = candle
                             }
-                            //print(candles)
                         }
                     }
                     .store(in: &cancellable)

@@ -20,9 +20,16 @@ struct OrderbookView: View {
                     let graphWidth = proxy.size.width * 0.4
                     VStack {
                         ForEach(orderbook.bidOrderBook, id: \.id) { item in
-                            HStack {
+                            Group {
+                                Text(item.price.formatted())
+                                    .frame(width: proxy.size.width * 0.4, alignment: .center)
+                                    .font(.subheadline)
+                            }
+                            .frame(height: 30)
+                            .frame(maxWidth:.infinity)
+                            .overlay(alignment: .leading, content: {
                                 ZStack(alignment: .trailing) {
-                                    let graphSize = (CGFloat(item.size) / CGFloat(largestBidSize) * graphWidth) * 0.9
+                                    let graphSize = (CGFloat(item.size) / CGFloat(largestBidSize) * graphWidth) * 0.7
                                     RoundedRectangle(cornerRadius: 2.0, style: .continuous)
                                         .foregroundStyle(.blue.opacity(0.1))
                                         .frame(maxWidth: graphSize, alignment: .trailing)
@@ -32,21 +39,20 @@ struct OrderbookView: View {
                                         .foregroundStyle(.blue)
                                 }
                                 .background(.white.opacity(0.1))
-                                Text(item.price.formatted())
-                                    .frame(width: graphWidth * 0.6)
-                                    .font(.subheadline)
-                                Spacer(minLength: graphWidth * 0.8)
-                            }
-                            .frame(height: 30)
+                                .frame(width: proxy.size.width * 0.3)
+                            })
                         }
                         ForEach(orderbook.askOrderBook, id: \.id) { item in
-                            HStack {
-                                Spacer(minLength: graphWidth * 0.8)
+                            Group {
                                 Text(item.price.formatted())
-                                    .frame(width: graphWidth * 0.6)
+                                    .frame(width: proxy.size.width * 0.4, alignment: .center)
                                     .font(.subheadline)
+                            }
+                            .frame(height: 30)
+                            .frame(maxWidth:.infinity)
+                            .overlay(alignment: .trailing, content: {
                                 ZStack(alignment: .leading) {
-                                    let graphSize = (CGFloat(item.size) / CGFloat(largestAskSize) * graphWidth) * 0.9
+                                    let graphSize = (CGFloat(item.size) / CGFloat(largestAskSize) * graphWidth) * 0.7
                                     RoundedRectangle(cornerRadius: 2.0, style: .continuous)
                                         .foregroundStyle(.red.opacity(0.1))
                                         .frame(maxWidth: graphSize, alignment: .leading)
@@ -56,8 +62,8 @@ struct OrderbookView: View {
                                         .foregroundStyle(.red)
                                 }
                                 .background(.white.opacity(0.1))
-                            }
-                            .frame(height: 30)
+                                .frame(width: proxy.size.width * 0.3)
+                            })
                         }
                     }
                 }
