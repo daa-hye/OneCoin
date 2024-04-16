@@ -12,7 +12,7 @@ final class MarketDetailViewModel: ObservableObject {
     
     let market: Market
 
-    @Published var marketTicker = MarketTicker(market: "", koreanName: "", englishName: "", tradePrice: 0, change: "", changePrice: 0, changeRate: 0, accTradePrice: 0, image: nil, code: "")
+    @Published var marketTicker = MarketTicker(market: "", koreanName: "", englishName: "", tradePrice: 0, change: "", changePrice: 0, changeRate: 0, accTradePrice: 0, accTradeVolume: 0, highest52WeekPrice: 0, lowest52WeekPrice: 0, highest52WeekDate: "", lowest52WeekDate: "", image: nil, code: "")
     @Published var candles: [Candle] = []
     @Published var orderbook: OrderBookChart = OrderBookChart(code: "", timestamp: 0, totalAskSize: 0.0, totalBidSize: 0.0, askOrderBook: [], bidOrderBook: [])
     

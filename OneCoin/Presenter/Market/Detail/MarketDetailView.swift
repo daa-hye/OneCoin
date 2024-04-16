@@ -58,11 +58,10 @@ struct MarketDetailView: View {
                 .tint(selectedTab == .orderbook ? .gray : .white)
             }
             .padding(.leading, 10)
-            Divider()
-                .padding(.bottom, 30)
-
             switch selectedTab {
             case .chart:
+                Divider()
+                    .padding(.bottom, 30)
                 ChartView(candles: $viewModel.candles, maxItem: viewModel.maxItem, minItem: viewModel.minItem, startPrice: viewModel.startPrice, change: market.change)
                     .padding(20)
                     .task {
@@ -70,8 +69,10 @@ struct MarketDetailView: View {
                     }
                 Spacer(minLength: 50.0)
             case .orderbook:
+                Divider()
                 OrderbookView(
-                    orderbook: $viewModel.orderbook,
+                    orderbook: $viewModel.orderbook, 
+                    marketTicker: $viewModel.marketTicker,
                     largestAskSize: viewModel.largestAskSize(),
                     largestBidSize: viewModel.largestBidSize()
                 )

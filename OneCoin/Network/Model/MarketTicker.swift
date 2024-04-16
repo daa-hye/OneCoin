@@ -17,7 +17,9 @@ struct MarketTicker: Hashable, Identifiable {
     let change: String
     let changePrice: Double
     let changeRate: Double
-    let accTradePrice: Double
+    let accTradePrice, accTradeVolume: Double
+    let highest52WeekPrice, lowest52WeekPrice: Double
+    let highest52WeekDate, lowest52WeekDate: String
     let image: URL?
     let code: String
 }

@@ -140,7 +140,7 @@ extension UpbitWebSocketManager {
     }
 
     private func combine(market: Market, ticker: Ticker) -> MarketTicker {
-        MarketTicker(market: market.market, koreanName: market.koreanName, englishName: market.englishName, tradePrice: ticker.tradePrice, change: ticker.change, changePrice: ticker.changePrice, changeRate: ticker.changeRate, accTradePrice: ticker.accTradePrice, image: URL(string: "https://static.upbit.com/logos/\(market.market.split(separator: "-").map({String($0)})[1]).png")!, code: market.market.split(separator: "-").map({String($0)})[1])
+        MarketTicker(market: market.market, koreanName: market.koreanName, englishName: market.englishName, tradePrice: ticker.tradePrice, change: ticker.change, changePrice: ticker.changePrice, changeRate: ticker.changeRate, accTradePrice: ticker.accTradePrice, accTradeVolume: ticker.accTradeVolume, highest52WeekPrice: ticker.highest52WeekPrice, lowest52WeekPrice: ticker.lowest52WeekPrice, highest52WeekDate: ticker.highest52WeekDate, lowest52WeekDate: ticker.lowest52WeekDate, image: URL(string: "https://static.upbit.com/logos/\(market.market.split(separator: "-").map({String($0)})[1]).png")!, code: market.market.split(separator: "-").map({String($0)})[1])
     }
 
     private func convert(orderbook: Orderbook) -> OrderBookChart {
