@@ -52,12 +52,16 @@ struct MarketView: View {
 
             }
             .navigationTitle("코인정보")
+            .task {
+                await viewModel.fetchAllMarket()
+                print("appear")
+            }
         }
         .listStyle(.plain)
         .environment(\.defaultMinListRowHeight, 50)
         .searchable(text: $searchQueryString, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "코인명/심볼 검색")
-        .task {
-            await viewModel.fetchAllMarket()
+        .onDisappear {
+            viewModel.closeSocket()
         }
     }
 }

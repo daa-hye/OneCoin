@@ -58,7 +58,6 @@ final class MarketDetailViewModel: ObservableObject {
                 minItem = candles.min(by: {$0.lowPrice < $1.lowPrice})!
                 maxItem = candles.max(by: {$0.highPrice < $1.highPrice})!
                 startPrice = candles[0].openingPrice
-                print(candles.sorted(by: { $0.candleDatetime.toDate() < $1.candleDatetime.toDate()}))
                 $marketTicker
                     .sink { [weak self] marketTicker in
                         guard let self else { return }

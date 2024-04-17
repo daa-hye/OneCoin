@@ -60,4 +60,8 @@ final class MarketViewModel: ObservableObject {
             print("소켓 연결 에러")
         }
     }
+
+    func closeSocket() {
+        UpbitWebSocketManager.shared.closeWebSocket()
+    }
 }

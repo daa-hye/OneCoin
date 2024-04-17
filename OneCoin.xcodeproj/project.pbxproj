@@ -83,7 +83,6 @@
 		53886B322BC5028400E64790 = {
 			isa = PBXGroup;
 			children = (
-				53886B9B2BC905A300E64790 /* CoreDataStack.swift */,
 				53886B3D2BC5028400E64790 /* OneCoin */,
 				53886B3C2BC5028400E64790 /* Products */,
 			);
@@ -195,6 +194,7 @@
 		53886B802BC7B86B00E64790 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				53886B9B2BC905A300E64790 /* CoreDataStack.swift */,
 				53886B942BC9019C00E64790 /* LikedCoinModel.xcdatamodeld */,
 			);
 			path = Data;
@@ -447,6 +447,7 @@
 				DEVELOPMENT_TEAM = KLYH4UN5ZC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "원코";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +482,7 @@
 				DEVELOPMENT_TEAM = KLYH4UN5ZC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "원코";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
